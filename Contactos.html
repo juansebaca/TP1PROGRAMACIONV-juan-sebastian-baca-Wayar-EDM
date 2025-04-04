@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="contactos-body">
+    <div class="container">
     <header class="contactos-header">
         <h1 class="contactos-h1">CONTACTOS</h1>
         <h2 class="contactos-h2">Información adicional y servicio al cliente</h2>
@@ -24,26 +25,51 @@
     <div class="contactos-form">
         <h3 class="contactos-form-title">Formulario de Contacto</h3>
         <form action="#" method="post" class="contactos-form-body">
-            <label for="name" class="contactos-label">Nombre:</label>
+
+            <label for="name" class="contactos-label">Nombre Completo querido:</label>
             <input type="text" id="name" name="name" class="contactos-input" placeholder="Ingresa tu nombre" required>
+           
+            <label for="mes" class="contactos-label">Mes de Nacimiento:</label>
+            <input type="month" id="mes" name="Mes" placeholder="Ingresa tu mes de nacimiento" required>
     
             <label for="email" class="contactos-label">Correo Electrónico:</label>
             <input type="email" id="email" name="email" class="contactos-input" placeholder="Ingresa tu correo electrónico" required>
     
-            <label for="message" class="contactos-label">Mensaje:</label>
+            <label for="message" class="contactos-label">Mensajito:</label>
             <textarea id="message" name="message" class="contactos-textarea" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
     
-            <button type="submit" class="contactos-button">Enviar</button>
+            <button type="submit" onclick="EnviarFormulareo()">Enviar</button>
+            
         </form>
     </div>
+    <footer class="contactos-footer">
+        <nav>
+            <ul class="contactos-nav">
+                <li><a href="/index.html" class="contactos-link">Volver a la página principal de México</a></li>
+                <li><a href="/Museo.html" class="contactos-link">Volver a Museos</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script>
+        //senetencias de programacion
+        function EnviarFormulareo() {//evitar que el formulario se envie
+            event.preventDefault(); // Prevenir el envío del formulario 
+            // Obtener los valores de los campos del formulario
+            var nombre = document.getElementById("name").value;
+            var mes = document.getElementById("mes").value;
+            var email = document.getElementById("email").value;
+            var mensaje = document.getElementById("message").value;
+                //mostrar los valores en la consola
+            console.log("Nombre: " + nombre);   
+            console.log("Mes: " + mes);
+            console.log("Email: " + email);
+            console.log("Mensaje: " + mensaje);
+            alert(nombre + ", tu mensaje se envio correctamente. ¡Gracias comunicarse che!");
+            } // Limpiar los campos del formulario
+     </script>
+    <p class="contactos-footer-text">© 2025 MéxicoInfoDeMentirita. Todos los derechos no reservados.</p>
+   
+     </div>
 </body>
-<footer class="contactos-footer">
-    <nav>
-        <ul class="contactos-nav">
-            <li><a href="/index.html" class="contactos-link">Volver a la página principal de México</a></li>
-            <li><a href="/Museo.html" class="contactos-link">Volver a Museos</a></li>
-        </ul>
-    </nav>
-</footer>
 
 </html> 
